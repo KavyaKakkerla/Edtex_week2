@@ -1,53 +1,92 @@
-# Edtex_week2
-README: Library Management System
-This README file explains how to compile and run the Library Management System program written in Java.
+This project is a Library Management System written in Java that allows users to manage books and patrons.
+The program demonstrates the use of Object-Oriented Programming (OOP) concepts and Java Collection Framework classes.
 
-Overview
-The Library Management System (Lms.java) allows users to perform the following operations:
+===>Features
+=> Book Management
+1.Add books (Fiction and Non-Fiction).
+2.Remove books.
+3.Display a list of all available books.
 
-Add, remove, and display books.
-Add, remove, and display patrons.
-Borrow and return books with proper validations.
-The program is written following Object-Oriented Programming (OOP) principles, incorporating encapsulation, exception handling, and modular design.
+=>Patron Management
 
-Prerequisites
+1.Add patrons.
+2.Remove patrons.
+3.Display a list of all registered patrons.
+4.Borrowing and Returning Books
+
+=>Patrons can borrow books.
+=>Patrons can return books.
+
+
+
+===>Demonstrates OOP Concepts
+
+-> Encapsulation, Inheritance, Polymorphism, and Abstraction.
+-> Use of abstract classes and interfaces.
+-> Utilizes Java Collection Framework
+-> ArrayList for managing lists of books and patrons.
+
+
+
+===> Prerequisites
 Java Development Kit (JDK) installed (version 8 or higher).
-A text editor (e.g., Notepad++, Visual Studio Code) or an IDE (e.g., IntelliJ IDEA, Eclipse).
-Terminal or command prompt for compilation and execution.
-File Structure
-Lms.java: The main program file containing all the code.
-How to Compile and Run
-Steps to Compile:
-Save the program in a file named Lms.java.
-Open a terminal or command prompt.
-Navigate to the directory where the Lms.java file is saved.
-Run the following command to compile the program:
-bash
-Copy
-Edit
-javac Lms.java
-If there are no syntax errors, this will generate a Lms.class file.
-Steps to Run:
-After successful compilation, run the following command to execute the program:
-bash
-Copy
-Edit
-java Lms
-Follow the on-screen menu to interact with the system.
-Program Usage
-Menu Options:
-Add Book: Add a new book to the system by providing title, author, ISBN, and quantity.
-Remove Book: Remove a book by entering its ISBN.
-Display Books: View the list of all available books.
-Add Patron: Register a new patron by providing their name and ID.
-Remove Patron: Remove a patron by entering their ID.
-Display Patrons: View the list of all registered patrons.
-Borrow Book: Borrow a book by entering the patron ID and book ISBN.
-Return Book: Return a book by entering the patron ID and book ISBN.
-Exit: Exit the program.
-Error Handling
-The program uses exceptions to handle errors, such as:
+A Java-compatible IDE like IntelliJ IDEA, Eclipse, or Visual Studio Code.
+Project Structure
+The project contains the following classes inside the LMSS package:
 
-Trying to remove or borrow a book that does not exist.
-Attempting to return a book that has not been borrowed.
-Handling invalid inputs like a nonexistent patron ID or ISBN.
+->Book (Superclass)
+Represents a generic book with properties like title, author, ISBN, and quantity.
+
+->FictionBook (Subclass of Book)
+Represents fiction books with an additional genre field.
+
+->NonFictionBook (Subclass of Book)
+Represents non-fiction books with an additional subject field.
+
+->Patron
+Represents a library patron who can borrow and return books.
+
+->BookList
+Manages the collection of books using an ArrayList.
+
+->PatronList
+Manages the collection of patrons using an ArrayList.
+
+->LibraryManagementSystem
+The main class containing the program's entry point and menu-driven interface.
+
+->Borrowable (Interface)
+Defines methods for borrowing and returning books.
+
+==>How to Compile and Run
+1. Compile the Program
+Extract the LMSS.zip file.
+
+Navigate to the directory containing the LMSS package.
+
+Open a terminal or command prompt in this directory.
+
+Run the following command to compile all .java files:
+
+javac -d . LMSS/*.java
+This will compile the program and place the .class files in their respective package folders.
+
+2. Run the Program
+Navigate to the directory containing the compiled LibraryManagementSystem class.
+
+Run the program using the following command:
+
+java LMSS.LibraryManagementSystem
+
+Follow the on-screen menu to interact with the system.
+
+===>Demonstration of Concepts
+OOP Concepts
+
+Encapsulation: All class attributes are private, and access is provided through getter and setter methods.
+Inheritance: FictionBook and NonFictionBook inherit from the Book class.
+Polymorphism: Overriding the toString() method in subclasses to provide specific details and also borrowBook and returnBook.
+Abstraction: Borrowable interface defines a contract for borrowing and returning books.
+Collection Framework
+ArrayList is used to store books and patrons dynamically.
+Methods like add(), remove(), and iteration are used for managing collections.
